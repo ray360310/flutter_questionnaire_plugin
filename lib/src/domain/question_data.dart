@@ -8,18 +8,18 @@ class QuestionData extends Equatable {
     required this.id,
     required this.type,
     this.title,
-    this.imageList,
+    List<String>? imageList,
     required this.isMandatory,
     List<OptionData>? options,
     List<OptionData>? answers,
-  }):answers = answers ?? [],
+  }):imageList = imageList ?? [],
+        answers = answers ?? [],
         options = options ?? [];
-
 
   final int id;
   final QuestionType type;
   final String? title;
-  final List<String>? imageList;
+  final List<String> imageList;
   final bool isMandatory;
   final List<OptionData>? options;
   late final List<OptionData> answers;
